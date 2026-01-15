@@ -255,10 +255,10 @@ export default function Localizacao() {
             {/* Botão Esquerda */}
             <button
               onClick={scrollLeft}
-              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full p-2 md:p-3 active:bg-gray-100 transition-colors hidden md:block"
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 shadow-lg rounded-full p-1.5 md:p-3 active:bg-gray-100 transition-colors"
               aria-label="Anterior"
             >
-              <svg className="w-5 h-5 md:w-6 md:h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 md:w-6 md:h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
             </button>
@@ -266,7 +266,7 @@ export default function Localizacao() {
             {/* Slider */}
             <div
               ref={sliderRef}
-              className="flex gap-3 md:gap-4 overflow-x-auto scrollbar-hide pb-4 px-1 md:px-12 cursor-grab select-none"
+              className="flex gap-3 md:gap-4 overflow-x-auto scrollbar-hide pb-4 px-8 md:px-12 cursor-grab select-none"
               style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
               onMouseDown={handleMouseDown}
               onMouseMove={handleMouseMove}
@@ -295,10 +295,10 @@ export default function Localizacao() {
             {/* Botão Direita */}
             <button
               onClick={scrollRight}
-              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full p-2 md:p-3 active:bg-gray-100 transition-colors hidden md:block"
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 shadow-lg rounded-full p-1.5 md:p-3 active:bg-gray-100 transition-colors"
               aria-label="Próximo"
             >
-              <svg className="w-5 h-5 md:w-6 md:h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 md:w-6 md:h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </button>

@@ -4,8 +4,8 @@ import Image from 'next/image';
 import { useState, useEffect, useRef } from 'react';
 
 const heroImages = [
-  '/images/hero.png',
-  '/images/hero-2.png',
+  { src: '/images/hero.png', position: 'object-[70%_center] md:object-center' },
+  { src: '/images/hero-2.png', position: 'object-right md:object-center' },
 ];
 
 export default function Hero() {
@@ -62,18 +62,18 @@ export default function Hero() {
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
       >
-        {heroImages.map((src, index) => (
+        {heroImages.map((image, index) => (
           <div
-            key={src}
+            key={image.src}
             className={`absolute inset-0 transition-opacity duration-1000 ${
               index === currentImage ? 'opacity-100' : 'opacity-0'
             }`}
           >
             <Image
-              src={src}
+              src={image.src}
               alt={`AYA Home Resort - Imagem ${index + 1}`}
               fill
-              className="object-cover"
+              className={`object-cover ${image.position}`}
               priority={index === 0}
             />
           </div>
@@ -122,25 +122,25 @@ export default function Hero() {
 
       {/* Barra de informações inferior - centralizada */}
       <div className="absolute bottom-0 left-0 right-0 z-20 flex justify-center">
-        <div className="flex flex-col sm:flex-row max-w-4xl w-full">
+        <div className="flex flex-row max-w-4xl w-full">
           {/* Dormitórios */}
-          <div className="bg-gray-900/95 text-white px-4 py-3 sm:px-6 sm:py-4 md:px-10 md:py-6 flex items-center justify-center gap-2 sm:gap-3">
-            <div className="flex items-baseline gap-1">
-              <span className="text-3xl sm:text-4xl md:text-5xl font-bold">2</span>
-              <span className="text-xs sm:text-sm text-gray-400">ou</span>
-              <span className="text-3xl sm:text-4xl md:text-5xl font-bold">3</span>
+          <div className="bg-gray-900/95 text-white px-3 py-2 sm:px-6 sm:py-4 md:px-10 md:py-6 flex items-center justify-center gap-1.5 sm:gap-3">
+            <div className="flex items-baseline gap-0.5 sm:gap-1">
+              <span className="text-2xl sm:text-4xl md:text-5xl font-bold">2</span>
+              <span className="text-[10px] sm:text-sm text-gray-400">ou</span>
+              <span className="text-2xl sm:text-4xl md:text-5xl font-bold">3</span>
             </div>
             <div className="text-left">
-              <p className="text-base sm:text-lg md:text-xl font-semibold leading-tight">Dorms</p>
-              <p className="text-base sm:text-lg md:text-xl font-semibold leading-tight">c/suíte</p>
+              <p className="text-sm sm:text-lg md:text-xl font-semibold leading-tight">Dorms</p>
+              <p className="text-sm sm:text-lg md:text-xl font-semibold leading-tight">c/suíte</p>
             </div>
           </div>
 
           {/* Localização */}
-          <div className="bg-[#8B0000] text-white px-4 py-3 sm:px-6 sm:py-4 md:px-10 md:py-6 flex items-center justify-center gap-2 sm:gap-3 flex-1">
-            <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-white rounded-full flex items-center justify-center flex-shrink-0">
+          <div className="bg-[#8B0000] text-white px-3 py-2 sm:px-6 sm:py-4 md:px-10 md:py-6 flex items-center justify-center gap-1.5 sm:gap-3 flex-1">
+            <div className="w-7 h-7 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-white rounded-full flex items-center justify-center flex-shrink-0">
               <svg
-                className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-[#8B0000]"
+                className="w-3.5 h-3.5 sm:w-5 sm:h-5 md:w-6 md:h-6 text-[#8B0000]"
                 fill="currentColor"
                 viewBox="0 0 24 24"
               >
@@ -148,8 +148,8 @@ export default function Hero() {
               </svg>
             </div>
             <div>
-              <p className="text-sm sm:text-base md:text-lg font-medium leading-tight">
-                Miguel Prisco, 2001<br className="sm:hidden" /> centro - Ribeirão Pires
+              <p className="text-xs sm:text-base md:text-lg font-medium leading-tight">
+                Miguel Prisco, 2001 - centro, Ribeirão Pires
               </p>
             </div>
           </div>

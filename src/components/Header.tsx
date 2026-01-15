@@ -48,35 +48,43 @@ export default function Header() {
           </a>
         </nav>
 
-        {/* Mobile Menu Button */}
-        <button
-          className="lg:hidden p-2"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label="Menu"
-        >
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
+        {/* Mobile: Botão Agendar + Menu Button */}
+        <div className="lg:hidden flex items-center gap-2">
+          <a
+            href="#contato"
+            className="bg-[#8B0000] active:bg-[#6B0000] text-white px-3 py-1.5 text-xs font-semibold transition-colors rounded"
           >
-            {isMenuOpen ? (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M6 18L18 6M6 6l12 12"
-              />
-            ) : (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            )}
-          </svg>
-        </button>
+            AGENDAR VISITA
+          </a>
+          <button
+            className="p-2"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Menu"
+          >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              {isMenuOpen ? (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              ) : (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              )}
+            </svg>
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
@@ -92,13 +100,6 @@ export default function Header() {
               {item.label}
             </a>
           ))}
-          <a
-            href="#contato"
-            className="block mx-4 my-3 bg-[#8B0000] active:bg-[#6B0000] text-white px-5 py-3 text-sm font-semibold transition-colors rounded text-center"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            AGENDE UMA VISITA
-          </a>
         </nav>
       )}
     </header>

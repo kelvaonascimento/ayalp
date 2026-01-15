@@ -131,7 +131,7 @@ export default function Galeria() {
           {/* Botão Esquerda */}
           <button
             onClick={scrollLeft}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full p-1.5 md:p-2 active:bg-gray-100 transition-colors hidden sm:block"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 shadow-lg rounded-full p-1 md:p-2 active:bg-gray-100 transition-colors"
             aria-label="Anterior"
           >
             <svg className="w-4 h-4 md:w-5 md:h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -142,7 +142,7 @@ export default function Galeria() {
           {/* Thumbnails */}
           <div
             ref={sliderRef}
-            className={`flex gap-2 md:gap-3 overflow-x-auto scrollbar-hide py-2 px-1 sm:px-8 md:px-10 select-none ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
+            className={`flex gap-2 md:gap-3 overflow-x-auto scrollbar-hide py-2 px-7 sm:px-8 md:px-10 select-none ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             onMouseDown={handleMouseDown}
             onMouseMove={handleMouseMove}
@@ -173,7 +173,7 @@ export default function Galeria() {
           {/* Botão Direita */}
           <button
             onClick={scrollRight}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full p-1.5 md:p-2 active:bg-gray-100 transition-colors hidden sm:block"
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 shadow-lg rounded-full p-1 md:p-2 active:bg-gray-100 transition-colors"
             aria-label="Próximo"
           >
             <svg className="w-4 h-4 md:w-5 md:h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
