@@ -1,0 +1,13 @@
+# Robots.txt para AYA Home Resort
+# https://ayahomeresort.com.br
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://ayahomeresort.com.br/sitemap.xml
+
+# Bloqueia pastas desnecessárias
+Disallow: /api/
+Disallow: /_next/
+Disallow: /static/

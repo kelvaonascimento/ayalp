@@ -7,10 +7,12 @@ import Plantas from '@/components/Plantas';
 import Diferenciais from '@/components/Diferenciais';
 import Contato from '@/components/Contato';
 import Footer from '@/components/Footer';
+import JsonLd from '@/components/JsonLd';
 
 export default function Home() {
   return (
     <>
+      <JsonLd />
       <Header />
       <main>
         <Hero />

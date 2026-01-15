@@ -1,0 +1,26 @@
+{
+  "name": "AYA Home Resort",
+  "short_name": "AYA Resort",
+  "description": "Apartamentos de 2 e 3 dormitórios com suíte em Ribeirão Pires - SP",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#8B0000",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "categories": ["business", "lifestyle"],
+  "lang": "pt-BR"
+}
