@@ -94,7 +94,7 @@ export default function Galeria() {
           </h2>
           <div className="w-16 md:w-20 h-1 bg-[#8B0000] mx-auto mb-4 md:mb-6" />
           <p className="text-sm md:text-base text-gray-600 max-w-2xl mx-auto px-2">
-            Mais de 20 itens de lazer para você e sua família aproveitarem todos os momentos
+            31 itens de lazer para você e sua família aproveitarem todos os momentos
           </p>
         </div>
 

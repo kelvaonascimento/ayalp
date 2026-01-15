@@ -57,7 +57,7 @@ export default function Header() {
             AGENDAR VISITA
           </a>
           <button
-            className="p-2"
+            className="p-2 text-gray-700"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Menu"
           >

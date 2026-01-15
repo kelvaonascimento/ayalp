@@ -287,7 +287,7 @@ export default function Contato() {
                 <div>
                   <p className="text-xs md:text-sm text-gray-500">Endereço</p>
                   <p className="text-base md:text-lg text-gray-800">
-                    Rua Miguel Prisco, 2001<br />
+                    Rua Miguel Prisco, 2000<br />
                     Ribeirão Pires - SP
                   </p>
                 </div>

@@ -198,7 +198,7 @@ export default function Localizacao() {
           </h2>
           <div className="w-16 md:w-20 h-1 bg-[#8B0000] mx-auto mb-4 md:mb-6" />
           <p className="text-sm md:text-base text-gray-600 max-w-2xl mx-auto">
-            Rua Miguel Prisco, 2001 - Ribeirão Pires, SP
+            Rua Miguel Prisco, 2000 - Ribeirão Pires, SP
           </p>
         </div>
 
@@ -231,17 +231,27 @@ export default function Localizacao() {
             </ul>
           </div>
 
-          <div className="order-1 md:order-2 h-[280px] sm:h-[350px] md:h-[400px] rounded-lg overflow-hidden shadow-xl">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3654.8876543210!2d-46.41234567890!3d-23.71234567890!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDQyJzQ0LjQiUyA0NsKwMjQnNDQuNCJX!5e0!3m2!1spt-BR!2sbr!4v1234567890"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Localização AYA Home Resort"
-            />
+          <div className="order-1 md:order-2">
+            <div className="h-[280px] sm:h-[350px] md:h-[400px] rounded-lg overflow-hidden shadow-xl">
+              <iframe
+                src="https://www.google.com/maps?q=Rua+Miguel+Prisco,+2000,+Centro,+Ribeirão+Pires,+SP,+Brasil&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Localização AYA Home Resort"
+              />
+            </div>
+            <div className="mt-4 p-4 bg-[#8B0000] rounded-lg text-white text-center">
+              <p className="text-sm md:text-base font-medium">
+                Visite nosso Stand de Vendas
+              </p>
+              <p className="text-xs md:text-sm opacity-90 mt-1">
+                Rua Miguel Prisco, 2001 - Centro, Ribeirão Pires
+              </p>
+            </div>
           </div>
         </div>
 

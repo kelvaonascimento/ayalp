@@ -5,9 +5,9 @@ import { useState } from 'react';
 
 const features = [
   { number: '2 e 3', label: 'Dormitórios com suíte' },
-  { number: '112m² a 237m²', label: 'com varanda gourmet' },
-  { number: '159', label: 'Vagas de estacionamento' },
-  { number: 'Fev/28', label: 'Previsão de entrega' },
+  { number: '69m² a 239m²', label: 'com varanda gourmet' },
+  { number: '31', label: 'Itens de lazer' },
+  { number: 'Mar/28', label: 'Previsão de entrega' },
 ];
 
 // URL do Tour Virtual Matterport

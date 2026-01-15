@@ -53,7 +53,7 @@ export default function Footer() {
               </p>
               <p>
                 <strong className="text-white">Endereço:</strong><br />
-                Rua Miguel Prisco, 2001<br />
+                Rua Miguel Prisco, 2000<br />
                 Ribeirão Pires - SP
               </p>
             </div>

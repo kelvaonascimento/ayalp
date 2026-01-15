@@ -103,14 +103,31 @@ export default function Hero() {
           height={64}
           className="mx-auto mb-4 md:mb-6 brightness-0 invert w-32 md:w-48"
         />
-        <h1 className="text-2xl md:text-4xl lg:text-5xl font-light mb-3 md:mb-4 max-w-5xl mx-auto leading-tight">
-          AYA Home Resort, o primeiro alto padrão
-          <span className="hidden md:inline"><br /></span>
-          <span className="md:hidden"> </span>
-          no centro urbano de Ribeirão Pires
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-light mb-3 md:mb-4 max-w-5xl mx-auto leading-snug md:leading-tight">
+          {/* Mobile */}
+          <span className="md:hidden">
+            <span className="font-bold">AYA Home Resort</span>,<br />
+            o primeiro <span className="font-bold">alto padrão</span><br />
+            no centro urbano de<br />
+            <span className="font-bold">Ribeirão Pires</span>
+          </span>
+          {/* Desktop */}
+          <span className="hidden md:inline">
+            AYA Home Resort, o primeiro alto padrão
+            <br />
+            no centro urbano de Ribeirão Pires
+          </span>
         </h1>
-        <p className="text-base md:text-2xl font-light mb-6 md:mb-8 opacity-90 px-2">
-          O novo padrão de viver bem no centro urbano da cidade
+        <p className="text-xl md:text-2xl font-light mb-6 md:mb-8 opacity-90 px-2">
+          {/* Mobile */}
+          <span className="md:hidden">
+            O <span className="font-semibold">novo padrão</span> de viver bem<br />
+            no centro urbano da cidade
+          </span>
+          {/* Desktop */}
+          <span className="hidden md:inline">
+            O novo padrão de viver bem no centro urbano da cidade
+          </span>
         </p>
         <a
           href="#contato"
@@ -122,36 +139,31 @@ export default function Hero() {
 
       {/* Barra de informações inferior - centralizada */}
       <div className="absolute bottom-0 left-0 right-0 z-20 flex justify-center">
-        <div className="flex flex-row max-w-4xl w-full">
+        <div className="flex flex-col sm:flex-row max-w-4xl w-full">
           {/* Dormitórios */}
-          <div className="bg-gray-900/95 text-white px-3 py-2 sm:px-6 sm:py-4 md:px-10 md:py-6 flex items-center justify-center gap-1.5 sm:gap-3">
-            <div className="flex items-baseline gap-0.5 sm:gap-1">
-              <span className="text-2xl sm:text-4xl md:text-5xl font-bold">2</span>
-              <span className="text-[10px] sm:text-sm text-gray-400">ou</span>
-              <span className="text-2xl sm:text-4xl md:text-5xl font-bold">3</span>
+          <div className="bg-gray-900/95 text-white px-4 py-3 sm:px-6 sm:py-4 md:px-10 md:py-6 flex items-center justify-center gap-2 sm:gap-3">
+            <div className="flex items-baseline gap-1">
+              <span className="text-3xl sm:text-4xl md:text-5xl font-bold">2</span>
+              <span className="text-xs sm:text-sm text-gray-400">ou</span>
+              <span className="text-3xl sm:text-4xl md:text-5xl font-bold">3</span>
             </div>
-            <div className="text-left">
-              <p className="text-sm sm:text-lg md:text-xl font-semibold leading-tight">Dorms</p>
-              <p className="text-sm sm:text-lg md:text-xl font-semibold leading-tight">c/suíte</p>
-            </div>
+            <p className="text-base sm:text-lg md:text-xl font-semibold leading-tight">Dorms c/suíte</p>
           </div>
 
           {/* Localização */}
-          <div className="bg-[#8B0000] text-white px-3 py-2 sm:px-6 sm:py-4 md:px-10 md:py-6 flex items-center justify-center gap-1.5 sm:gap-3 flex-1">
-            <div className="w-7 h-7 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-white rounded-full flex items-center justify-center flex-shrink-0">
+          <div className="bg-[#8B0000] text-white px-4 py-3 sm:px-6 sm:py-4 md:px-10 md:py-6 flex items-center justify-center gap-2 sm:gap-3 flex-1">
+            <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-white rounded-full flex items-center justify-center flex-shrink-0">
               <svg
-                className="w-3.5 h-3.5 sm:w-5 sm:h-5 md:w-6 md:h-6 text-[#8B0000]"
+                className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-[#8B0000]"
                 fill="currentColor"
                 viewBox="0 0 24 24"
               >
                 <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
               </svg>
             </div>
-            <div>
-              <p className="text-xs sm:text-base md:text-lg font-medium leading-tight">
-                Miguel Prisco, 2001 - centro, Ribeirão Pires
-              </p>
-            </div>
+            <p className="text-sm sm:text-base md:text-lg font-medium leading-tight">
+              R. Miguel Prisco, 2000 - Centro, Ribeirão Pires
+            </p>
           </div>
         </div>
       </div>
