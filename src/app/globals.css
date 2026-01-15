@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Configura o dark mode para usar classe em vez de prefers-color-scheme */
+@variant dark (&:where(.dark, .dark *));
+
 :root {
   --primary: #8B0000;
   --primary-dark: #6B0000;

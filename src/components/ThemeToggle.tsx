@@ -4,75 +4,72 @@ import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 
 export default function ThemeToggle() {
-  const { resolvedTheme, setTheme } = useTheme();
+  const { setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
+  // Necessário para evitar hydration mismatch
   useEffect(() => {
     setMounted(true);
   }, []);
 
+  // Placeholder durante SSR
   if (!mounted) {
     return (
-      <div className="w-14 h-7 bg-gray-300 rounded-full" />
+      <div className="w-14 h-7 bg-gray-200 rounded-full animate-pulse" />
     );
   }
 
   const isDark = resolvedTheme === 'dark';
 
+  const handleToggle = () => {
+    const newTheme = isDark ? 'light' : 'dark';
+    console.log('Changing theme from', resolvedTheme, 'to', newTheme);
+    setTheme(newTheme);
+  };
+
   return (
     <button
-      onClick={() => setTheme(isDark ? 'light' : 'dark')}
-      className={`relative w-14 h-7 rounded-full transition-colors duration-300 ${
-        isDark ? 'bg-slate-700' : 'bg-amber-100'
+      type="button"
+      onClick={handleToggle}
+      className={`relative inline-flex h-7 w-14 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-300 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75 ${
+        isDark ? 'bg-slate-700' : 'bg-amber-300'
       }`}
       aria-label={isDark ? 'Ativar modo claro' : 'Ativar modo escuro'}
     >
-      {/* Slider ball */}
-      <div
-        className={`absolute top-0.5 w-6 h-6 rounded-full transition-all duration-300 flex items-center justify-center ${
+      {/* Círculo deslizante */}
+      <span
+        className={`pointer-events-none relative inline-block h-6 w-6 transform rounded-full shadow-lg ring-0 transition-transform duration-300 ease-in-out ${
           isDark
-            ? 'left-7 bg-slate-900 shadow-lg'
-            : 'left-0.5 bg-amber-400 shadow-md'
+            ? 'translate-x-7 bg-slate-800'
+            : 'translate-x-0 bg-amber-500'
         }`}
       >
-        {isDark ? (
-          // Moon icon
-          <svg
-            className="w-4 h-4 text-blue-200"
-            fill="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+        {/* Ícone da Lua (dark mode) */}
+        <span
+          className={`absolute inset-0 flex h-full w-full items-center justify-center transition-opacity duration-300 ${
+            isDark ? 'opacity-100' : 'opacity-0'
+          }`}
+        >
+          <svg className="h-4 w-4 text-blue-200" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
           </svg>
-        ) : (
-          // Sun icon
-          <svg
-            className="w-4 h-4 text-amber-600"
-            fill="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z" />
-          </svg>
-        )}
-      </div>
+        </span>
 
-      {/* Background icons */}
-      <div className="absolute inset-0 flex items-center justify-between px-1.5 pointer-events-none">
-        <svg
-          className={`w-4 h-4 transition-opacity ${isDark ? 'opacity-0' : 'opacity-30'}`}
-          fill="currentColor"
-          viewBox="0 0 24 24"
+        {/* Ícone do Sol (light mode) */}
+        <span
+          className={`absolute inset-0 flex h-full w-full items-center justify-center transition-opacity duration-300 ${
+            isDark ? 'opacity-0' : 'opacity-100'
+          }`}
         >
-          <path d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
-        </svg>
-        <svg
-          className={`w-4 h-4 transition-opacity ${isDark ? 'opacity-30' : 'opacity-0'}`}
-          fill="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0z" />
-        </svg>
-      </div>
+          <svg className="h-4 w-4 text-amber-100" fill="currentColor" viewBox="0 0 20 20">
+            <path
+              fillRule="evenodd"
+              d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+              clipRule="evenodd"
+            />
+          </svg>
+        </span>
+      </span>
     </button>
   );
 }

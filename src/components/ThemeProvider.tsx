@@ -9,6 +9,7 @@ export default function ThemeProvider({ children }: { children: ReactNode }) {
       attribute="class"
       defaultTheme="light"
       enableSystem={false}
+      storageKey="aya-theme"
       disableTransitionOnChange={false}
     >
       {children}

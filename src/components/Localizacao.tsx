@@ -288,7 +288,7 @@ export default function Localizacao() {
                   key={index}
                   className="flex-shrink-0 w-32 md:w-40 bg-white dark:bg-gray-700 rounded-xl shadow-md dark:shadow-gray-900/50 p-4 md:p-6 text-center active:shadow-lg transition-shadow"
                 >
-                  <div className="text-[#8B0000] flex justify-center mb-2 md:mb-3">
+                  <div className="text-[#8B0000] dark:text-white flex justify-center mb-2 md:mb-3">
                     <div className="w-6 h-6 md:w-8 md:h-8">{item.icone}</div>
                   </div>
                   <p className="text-xs md:text-sm text-gray-600 dark:text-white mb-2 font-medium leading-tight min-h-[32px] md:min-h-[40px] flex items-center justify-center">
