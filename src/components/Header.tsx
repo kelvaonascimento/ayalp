@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { useState } from 'react';
+import ThemeToggle from './ThemeToggle';
 
 const menuItems = [
   { label: 'Início', href: '#inicio' },
@@ -17,7 +18,7 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+    <header className="fixed top-0 left-0 right-0 bg-white dark:bg-gray-900 shadow-md dark:shadow-gray-800/50 z-50 transition-colors">
       <div className="container mx-auto px-4 py-2.5 md:py-3 flex items-center justify-between">
         <a href="#inicio" className="flex items-center">
           <Image
@@ -25,7 +26,7 @@ export default function Header() {
             alt="AYA Home Resort"
             width={120}
             height={50}
-            className="h-10 md:h-12 w-auto"
+            className="h-10 md:h-12 w-auto dark:brightness-110"
           />
         </a>
 
@@ -35,7 +36,7 @@ export default function Header() {
             <a
               key={item.href}
               href={item.href}
-              className="text-gray-700 hover:text-[#8B0000] transition-colors text-sm font-medium"
+              className="text-gray-700 dark:text-gray-300 hover:text-[#8B0000] dark:hover:text-[#ff6b6b] transition-colors text-sm font-medium"
             >
               {item.label}
             </a>
@@ -46,9 +47,10 @@ export default function Header() {
           >
             AGENDE UMA VISITA
           </a>
+          <ThemeToggle />
         </nav>
 
-        {/* Mobile: Botão Agendar + Menu Button */}
+        {/* Mobile: Botão Agendar + Theme Toggle + Menu Button */}
         <div className="lg:hidden flex items-center gap-2">
           <a
             href="#contato"
@@ -56,8 +58,9 @@ export default function Header() {
           >
             AGENDAR VISITA
           </a>
+          <ThemeToggle />
           <button
-            className="p-2 text-gray-700"
+            className="p-2 text-gray-700 dark:text-gray-300"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Menu"
           >
@@ -89,12 +92,12 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <nav className="lg:hidden bg-white border-t max-h-[calc(100vh-60px)] overflow-y-auto">
+        <nav className="lg:hidden bg-white dark:bg-gray-900 border-t dark:border-gray-800 max-h-[calc(100vh-60px)] overflow-y-auto">
           {menuItems.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="block px-4 py-3 text-gray-700 active:bg-gray-100 active:text-[#8B0000] transition-colors text-sm"
+              className="block px-4 py-3 text-gray-700 dark:text-gray-300 active:bg-gray-100 dark:active:bg-gray-800 active:text-[#8B0000] transition-colors text-sm"
               onClick={() => setIsMenuOpen(false)}
             >
               {item.label}

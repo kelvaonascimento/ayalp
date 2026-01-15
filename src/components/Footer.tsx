@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white py-8 md:py-12">
+    <footer className="bg-gray-900 dark:bg-gray-950 text-white py-8 md:py-12 transition-colors">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 mb-6 md:mb-8">
           {/* Logo e Descrição */}
@@ -61,7 +61,7 @@ export default function Footer() {
         </div>
 
         {/* Realizadores */}
-        <div className="border-t border-gray-800 pt-6 md:pt-8 mb-6 md:mb-8">
+        <div className="border-t border-gray-800 dark:border-gray-700 pt-6 md:pt-8 mb-6 md:mb-8">
           <p className="text-gray-500 text-xs md:text-sm text-center mb-4 md:mb-6">Realização</p>
           <div className="flex justify-center items-center gap-8 md:gap-12">
             <Image
@@ -82,7 +82,7 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="border-t border-gray-800 pt-6 md:pt-8">
+        <div className="border-t border-gray-800 dark:border-gray-700 pt-6 md:pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-2 md:gap-4">
             <p className="text-gray-500 text-xs md:text-sm text-center md:text-left">
               &copy; {new Date().getFullYear()} AYA Home Resort. Todos os direitos reservados.

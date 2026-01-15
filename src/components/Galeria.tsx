@@ -86,14 +86,14 @@ export default function Galeria() {
   };
 
   return (
-    <section id="areas-comuns" className="py-12 md:py-20 bg-white">
+    <section id="areas-comuns" className="py-12 md:py-20 bg-white dark:bg-gray-900 transition-colors">
       <div className="container mx-auto px-4">
         <div className="text-center mb-6 md:mb-12">
-          <h2 className="text-2xl md:text-4xl font-light text-gray-800 mb-3 md:mb-4">
+          <h2 className="text-2xl md:text-4xl font-light text-gray-800 dark:text-gray-100 mb-3 md:mb-4">
             Áreas Comuns
           </h2>
           <div className="w-16 md:w-20 h-1 bg-[#8B0000] mx-auto mb-4 md:mb-6" />
-          <p className="text-sm md:text-base text-gray-600 max-w-2xl mx-auto px-2">
+          <p className="text-sm md:text-base text-gray-600 dark:text-gray-400 max-w-2xl mx-auto px-2">
             31 itens de lazer para você e sua família aproveitarem todos os momentos
           </p>
         </div>
@@ -131,10 +131,10 @@ export default function Galeria() {
           {/* Botão Esquerda */}
           <button
             onClick={scrollLeft}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 shadow-lg rounded-full p-1 md:p-2 active:bg-gray-100 transition-colors"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 dark:bg-gray-700/90 shadow-lg rounded-full p-1 md:p-2 active:bg-gray-100 dark:active:bg-gray-600 transition-colors"
             aria-label="Anterior"
           >
-            <svg className="w-4 h-4 md:w-5 md:h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-4 h-4 md:w-5 md:h-5 text-gray-600 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
           </button>
@@ -173,17 +173,17 @@ export default function Galeria() {
           {/* Botão Direita */}
           <button
             onClick={scrollRight}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 shadow-lg rounded-full p-1 md:p-2 active:bg-gray-100 transition-colors"
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 dark:bg-gray-700/90 shadow-lg rounded-full p-1 md:p-2 active:bg-gray-100 dark:active:bg-gray-600 transition-colors"
             aria-label="Próximo"
           >
-            <svg className="w-4 h-4 md:w-5 md:h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-4 h-4 md:w-5 md:h-5 text-gray-600 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
           </button>
         </div>
 
         {/* Indicador de quantidade */}
-        <p className="text-center text-gray-500 text-xs md:text-sm mt-3 md:mt-4">
+        <p className="text-center text-gray-500 dark:text-gray-400 text-xs md:text-sm mt-3 md:mt-4">
           {selectedImage + 1} de {images.length} imagens
         </p>
       </div>

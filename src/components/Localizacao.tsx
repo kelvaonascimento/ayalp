@@ -190,43 +190,43 @@ export default function Localizacao() {
   };
 
   return (
-    <section id="localizacao" className="py-12 md:py-20 bg-gray-50">
+    <section id="localizacao" className="py-12 md:py-20 bg-gray-50 dark:bg-gray-800 transition-colors">
       <div className="container mx-auto px-4">
         <div className="text-center mb-8 md:mb-16">
-          <h2 className="text-2xl md:text-4xl font-light text-gray-800 mb-3 md:mb-4">
+          <h2 className="text-2xl md:text-4xl font-light text-gray-800 dark:text-gray-100 mb-3 md:mb-4">
             Localização Privilegiada
           </h2>
           <div className="w-16 md:w-20 h-1 bg-[#8B0000] mx-auto mb-4 md:mb-6" />
-          <p className="text-sm md:text-base text-gray-600 max-w-2xl mx-auto">
+          <p className="text-sm md:text-base text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             Rua Miguel Prisco, 2000 - Ribeirão Pires, SP
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-center">
           <div className="order-2 md:order-1">
-            <h3 className="text-xl md:text-2xl font-light text-gray-800 mb-4 md:mb-6">
+            <h3 className="text-xl md:text-2xl font-light text-gray-800 dark:text-gray-100 mb-4 md:mb-6">
               Tudo o que você precisa por perto
             </h3>
             <ul className="space-y-3 md:space-y-4">
               <li className="flex items-center gap-3">
                 <span className="w-2 h-2 bg-[#8B0000] rounded-full flex-shrink-0" />
-                <span className="text-sm md:text-base text-gray-600">Fácil acesso às principais vias</span>
+                <span className="text-sm md:text-base text-gray-600 dark:text-gray-400">Fácil acesso às principais vias</span>
               </li>
               <li className="flex items-center gap-3">
                 <span className="w-2 h-2 bg-[#8B0000] rounded-full flex-shrink-0" />
-                <span className="text-sm md:text-base text-gray-600">Próximo a escolas e hospitais</span>
+                <span className="text-sm md:text-base text-gray-600 dark:text-gray-400">Próximo a escolas e hospitais</span>
               </li>
               <li className="flex items-center gap-3">
                 <span className="w-2 h-2 bg-[#8B0000] rounded-full flex-shrink-0" />
-                <span className="text-sm md:text-base text-gray-600">Comércio e serviços na região</span>
+                <span className="text-sm md:text-base text-gray-600 dark:text-gray-400">Comércio e serviços na região</span>
               </li>
               <li className="flex items-center gap-3">
                 <span className="w-2 h-2 bg-[#8B0000] rounded-full flex-shrink-0" />
-                <span className="text-sm md:text-base text-gray-600">Região tranquila e arborizada</span>
+                <span className="text-sm md:text-base text-gray-600 dark:text-gray-400">Região tranquila e arborizada</span>
               </li>
               <li className="flex items-center gap-3">
                 <span className="w-2 h-2 bg-[#8B0000] rounded-full flex-shrink-0" />
-                <span className="text-sm md:text-base text-gray-600">Estação de trem nas proximidades</span>
+                <span className="text-sm md:text-base text-gray-600 dark:text-gray-400">Estação de trem nas proximidades</span>
               </li>
             </ul>
           </div>
@@ -257,7 +257,7 @@ export default function Localizacao() {
 
         {/* Slider de Facilidades */}
         <div className="mt-10 md:mt-16">
-          <h3 className="text-lg md:text-2xl font-light text-gray-800 mb-4 md:mb-8 text-center">
+          <h3 className="text-lg md:text-2xl font-light text-gray-800 dark:text-gray-100 mb-4 md:mb-8 text-center">
             Tempo de deslocamento de carro
           </h3>
 
@@ -265,10 +265,10 @@ export default function Localizacao() {
             {/* Botão Esquerda */}
             <button
               onClick={scrollLeft}
-              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 shadow-lg rounded-full p-1.5 md:p-3 active:bg-gray-100 transition-colors"
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 dark:bg-gray-700/90 shadow-lg rounded-full p-1.5 md:p-3 active:bg-gray-100 dark:active:bg-gray-600 transition-colors"
               aria-label="Anterior"
             >
-              <svg className="w-4 h-4 md:w-6 md:h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 md:w-6 md:h-6 text-gray-600 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
             </button>
@@ -286,17 +286,17 @@ export default function Localizacao() {
               {facilidades.map((item, index) => (
                 <div
                   key={index}
-                  className="flex-shrink-0 w-32 md:w-40 bg-white rounded-xl shadow-md p-4 md:p-6 text-center active:shadow-lg transition-shadow"
+                  className="flex-shrink-0 w-32 md:w-40 bg-white dark:bg-gray-700 rounded-xl shadow-md dark:shadow-gray-900/50 p-4 md:p-6 text-center active:shadow-lg transition-shadow"
                 >
-                  <div className="text-[#8B0000] flex justify-center mb-2 md:mb-3">
+                  <div className="text-[#8B0000] dark:text-[#ff6b6b] flex justify-center mb-2 md:mb-3">
                     <div className="w-6 h-6 md:w-8 md:h-8">{item.icone}</div>
                   </div>
-                  <p className="text-xs md:text-sm text-gray-600 mb-2 font-medium leading-tight min-h-[32px] md:min-h-[40px] flex items-center justify-center">
+                  <p className="text-xs md:text-sm text-gray-600 dark:text-gray-300 mb-2 font-medium leading-tight min-h-[32px] md:min-h-[40px] flex items-center justify-center">
                     {item.nome}
                   </p>
                   <div className="flex items-center justify-center gap-1">
-                    <span className="text-2xl md:text-3xl font-bold text-[#8B0000]">{item.tempo}</span>
-                    <span className="text-xs md:text-sm text-gray-500">min</span>
+                    <span className="text-2xl md:text-3xl font-bold text-[#8B0000] dark:text-[#ff6b6b]">{item.tempo}</span>
+                    <span className="text-xs md:text-sm text-gray-500 dark:text-gray-400">min</span>
                   </div>
                 </div>
               ))}
@@ -305,10 +305,10 @@ export default function Localizacao() {
             {/* Botão Direita */}
             <button
               onClick={scrollRight}
-              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 shadow-lg rounded-full p-1.5 md:p-3 active:bg-gray-100 transition-colors"
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 dark:bg-gray-700/90 shadow-lg rounded-full p-1.5 md:p-3 active:bg-gray-100 dark:active:bg-gray-600 transition-colors"
               aria-label="Próximo"
             >
-              <svg className="w-4 h-4 md:w-6 md:h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 md:w-6 md:h-6 text-gray-600 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </button>

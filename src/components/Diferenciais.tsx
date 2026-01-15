@@ -22,10 +22,10 @@ export default function Diferenciais() {
   };
 
   return (
-    <section id="diferenciais" className="py-12 md:py-20 bg-gray-50">
+    <section id="diferenciais" className="py-12 md:py-20 bg-gray-50 dark:bg-gray-800 transition-colors">
       <div className="container mx-auto px-4">
         <div className="text-center mb-8 md:mb-16">
-          <h2 className="text-2xl md:text-4xl font-light text-gray-800 mb-3 md:mb-4">
+          <h2 className="text-2xl md:text-4xl font-light text-gray-800 dark:text-gray-100 mb-3 md:mb-4">
             O Prédio
           </h2>
           <div className="w-16 md:w-20 h-1 bg-[#8B0000] mx-auto" />
@@ -44,20 +44,20 @@ export default function Diferenciais() {
             {/* Botões de navegação */}
             <button
               onClick={imagemAnterior}
-              className="absolute left-2 md:left-3 top-1/2 -translate-y-1/2 bg-white/90 active:bg-white shadow-lg rounded-full p-2 md:p-3 transition-colors"
+              className="absolute left-2 md:left-3 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-gray-700/90 active:bg-white dark:active:bg-gray-600 shadow-lg rounded-full p-2 md:p-3 transition-colors"
               aria-label="Imagem anterior"
             >
-              <svg className="w-4 h-4 md:w-5 md:h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 md:w-5 md:h-5 text-gray-700 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
             </button>
 
             <button
               onClick={proximaImagem}
-              className="absolute right-2 md:right-3 top-1/2 -translate-y-1/2 bg-white/90 active:bg-white shadow-lg rounded-full p-2 md:p-3 transition-colors"
+              className="absolute right-2 md:right-3 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-gray-700/90 active:bg-white dark:active:bg-gray-600 shadow-lg rounded-full p-2 md:p-3 transition-colors"
               aria-label="Próxima imagem"
             >
-              <svg className="w-4 h-4 md:w-5 md:h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 md:w-5 md:h-5 text-gray-700 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </button>
@@ -79,17 +79,17 @@ export default function Diferenciais() {
 
           {/* Texto */}
           <div className="mt-2 md:mt-0">
-            <h3 className="text-xl md:text-2xl font-light text-gray-800 mb-4 md:mb-6">
+            <h3 className="text-xl md:text-2xl font-light text-gray-800 dark:text-gray-100 mb-4 md:mb-6">
               O empreendimento que Ribeirão Pires aguardava
             </h3>
-            <p className="text-sm md:text-base text-gray-600 mb-4 md:mb-6 leading-relaxed">
+            <p className="text-sm md:text-base text-gray-600 dark:text-gray-400 mb-4 md:mb-6 leading-relaxed">
               O AYA Home Resort é o empreendimento que Ribeirão Pires aguardava
               e agora tem o privilégio de receber. Inspirado em um conceito inovador
               de viver bem, traz sofisticação, funcionalidade e modernidade em cada
               detalhe, oferecendo uma experiência única para quem busca conforto,
               beleza e praticidade em um só lugar.
             </p>
-            <p className="text-sm md:text-base text-gray-600 leading-relaxed">
+            <p className="text-sm md:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
               O apartamento decorado é a perfeita união de elegância e funcionalidade.
               A integração total entre sala de estar, varanda gourmet e cozinha cria
               ambientes amplos, iluminados e ventilados, ideais para momentos de

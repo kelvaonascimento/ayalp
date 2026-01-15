@@ -147,14 +147,14 @@ export default function Plantas() {
   const totalImagens = plantaAtual.imagens.length;
 
   return (
-    <section id="plantas" className="py-12 md:py-20 bg-gray-50">
+    <section id="plantas" className="py-12 md:py-20 bg-gray-50 dark:bg-gray-800 transition-colors">
       <div className="container mx-auto px-4">
         <div className="text-center mb-6 md:mb-16">
-          <h2 className="text-2xl md:text-4xl font-light text-gray-800 mb-3 md:mb-4">
+          <h2 className="text-2xl md:text-4xl font-light text-gray-800 dark:text-gray-100 mb-3 md:mb-4">
             Plantas
           </h2>
           <div className="w-16 md:w-20 h-1 bg-[#8B0000] mx-auto mb-4 md:mb-6" />
-          <p className="text-sm md:text-base text-gray-600 max-w-2xl mx-auto">
+          <p className="text-sm md:text-base text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             Escolha a planta ideal para você e sua família
           </p>
         </div>
@@ -168,7 +168,7 @@ export default function Plantas() {
               className={`px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-medium transition-colors ${
                 plantaSelecionada === index
                   ? 'bg-[#8B0000] text-white'
-                  : 'bg-white text-gray-700 active:bg-gray-100 shadow-sm'
+                  : 'bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 active:bg-gray-100 dark:active:bg-gray-600 shadow-sm'
               }`}
             >
               {planta.nome} | {planta.area}
@@ -179,7 +179,7 @@ export default function Plantas() {
         {/* Planta Selecionada */}
         <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-center">
           <div
-            className={`relative h-[320px] sm:h-[400px] md:h-[500px] bg-white rounded-lg shadow-lg overflow-hidden select-none ${isDragging ? 'cursor-grabbing' : totalImagens > 1 ? 'cursor-grab' : ''}`}
+            className={`relative h-[320px] sm:h-[400px] md:h-[500px] bg-white dark:bg-gray-700 rounded-lg shadow-lg dark:shadow-gray-900/50 overflow-hidden select-none ${isDragging ? 'cursor-grabbing' : totalImagens > 1 ? 'cursor-grab' : ''}`}
             onMouseDown={totalImagens > 1 ? handleMouseDown : undefined}
             onMouseMove={totalImagens > 1 ? handleMouseMove : undefined}
             onMouseUp={totalImagens > 1 ? handleMouseUp : undefined}
@@ -208,20 +208,20 @@ export default function Plantas() {
               <>
                 <button
                   onClick={imagemAnterior}
-                  className="absolute left-1 md:left-2 top-1/2 -translate-y-1/2 bg-white/90 active:bg-white shadow-lg rounded-full p-1.5 md:p-2 transition-colors z-10"
+                  className="absolute left-1 md:left-2 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-gray-600/90 active:bg-white dark:active:bg-gray-500 shadow-lg rounded-full p-1.5 md:p-2 transition-colors z-10"
                   aria-label="Imagem anterior"
                 >
-                  <svg className="w-4 h-4 md:w-5 md:h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 md:w-5 md:h-5 text-gray-600 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                   </svg>
                 </button>
 
                 <button
                   onClick={proximaImagem}
-                  className="absolute right-1 md:right-2 top-1/2 -translate-y-1/2 bg-white/90 active:bg-white shadow-lg rounded-full p-1.5 md:p-2 transition-colors z-10"
+                  className="absolute right-1 md:right-2 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-gray-600/90 active:bg-white dark:active:bg-gray-500 shadow-lg rounded-full p-1.5 md:p-2 transition-colors z-10"
                   aria-label="Próxima imagem"
                 >
-                  <svg className="w-4 h-4 md:w-5 md:h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 md:w-5 md:h-5 text-gray-600 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </button>
@@ -233,7 +233,7 @@ export default function Plantas() {
                       key={index}
                       onClick={() => setImagemAtual(index)}
                       className={`w-2.5 h-2.5 md:w-3 md:h-3 rounded-full transition-colors ${
-                        imagemAtual === index ? 'bg-[#8B0000]' : 'bg-gray-300 active:bg-gray-400'
+                        imagemAtual === index ? 'bg-[#8B0000]' : 'bg-gray-300 dark:bg-gray-500 active:bg-gray-400 dark:active:bg-gray-400'
                       }`}
                       aria-label={`Ir para imagem ${index + 1}`}
                     />
@@ -244,18 +244,18 @@ export default function Plantas() {
           </div>
 
           <div className="text-center md:text-left">
-            <h3 className="text-xl md:text-2xl font-light text-gray-800 mb-2 md:mb-4">
+            <h3 className="text-xl md:text-2xl font-light text-gray-800 dark:text-gray-100 mb-2 md:mb-4">
               {plantaAtual.nome}
             </h3>
-            <p className="text-3xl md:text-4xl font-bold text-[#8B0000] mb-3 md:mb-4">
+            <p className="text-3xl md:text-4xl font-bold text-[#8B0000] dark:text-[#ff6b6b] mb-3 md:mb-4">
               {plantaAtual.area}
             </p>
-            <p className="text-sm md:text-base text-gray-600 mb-3 md:mb-4 leading-relaxed">
+            <p className="text-sm md:text-base text-gray-600 dark:text-gray-400 mb-3 md:mb-4 leading-relaxed">
               {plantaAtual.descricao}
             </p>
 
             {totalImagens > 1 && (
-              <p className="text-xs md:text-sm text-gray-500 mb-6 md:mb-8">
+              <p className="text-xs md:text-sm text-gray-500 dark:text-gray-400 mb-6 md:mb-8">
                 {imagemAtual + 1} de {totalImagens} imagens - arraste para navegar
               </p>
             )}

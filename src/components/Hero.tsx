@@ -141,7 +141,7 @@ export default function Hero() {
       <div className="absolute bottom-0 left-0 right-0 z-20 flex justify-center">
         <div className="flex flex-col sm:flex-row max-w-4xl w-full">
           {/* Dormitórios */}
-          <div className="bg-gray-900/95 text-white px-4 py-3 sm:px-6 sm:py-4 md:px-10 md:py-6 flex items-center justify-center gap-2 sm:gap-3">
+          <div className="bg-gray-900/95 dark:bg-gray-800/95 text-white px-4 py-3 sm:px-6 sm:py-4 md:px-10 md:py-6 flex items-center justify-center gap-2 sm:gap-3 transition-colors">
             <div className="flex items-baseline gap-1">
               <span className="text-3xl sm:text-4xl md:text-5xl font-bold">2</span>
               <span className="text-xs sm:text-sm text-gray-400">ou</span>
@@ -151,7 +151,7 @@ export default function Hero() {
           </div>
 
           {/* Localização */}
-          <div className="bg-[#8B0000] text-white px-4 py-3 sm:px-6 sm:py-4 md:px-10 md:py-6 flex items-center justify-center gap-2 sm:gap-3 flex-1">
+          <div className="bg-[#8B0000] text-white px-4 py-3 sm:px-6 sm:py-4 md:px-10 md:py-6 flex items-center justify-center gap-2 sm:gap-3 flex-1 transition-colors">
             <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-white rounded-full flex items-center justify-center flex-shrink-0">
               <svg
                 className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-[#8B0000]"
