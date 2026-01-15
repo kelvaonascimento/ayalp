@@ -210,23 +210,23 @@ export default function Localizacao() {
             <ul className="space-y-3 md:space-y-4">
               <li className="flex items-center gap-3">
                 <span className="w-2 h-2 bg-[#8B0000] rounded-full flex-shrink-0" />
-                <span className="text-sm md:text-base text-gray-600 dark:text-gray-400">Fácil acesso às principais vias</span>
+                <span className="text-sm md:text-base text-gray-600 dark:text-white">Fácil acesso às principais vias</span>
               </li>
               <li className="flex items-center gap-3">
                 <span className="w-2 h-2 bg-[#8B0000] rounded-full flex-shrink-0" />
-                <span className="text-sm md:text-base text-gray-600 dark:text-gray-400">Próximo a escolas e hospitais</span>
+                <span className="text-sm md:text-base text-gray-600 dark:text-white">Próximo a escolas e hospitais</span>
               </li>
               <li className="flex items-center gap-3">
                 <span className="w-2 h-2 bg-[#8B0000] rounded-full flex-shrink-0" />
-                <span className="text-sm md:text-base text-gray-600 dark:text-gray-400">Comércio e serviços na região</span>
+                <span className="text-sm md:text-base text-gray-600 dark:text-white">Comércio e serviços na região</span>
               </li>
               <li className="flex items-center gap-3">
                 <span className="w-2 h-2 bg-[#8B0000] rounded-full flex-shrink-0" />
-                <span className="text-sm md:text-base text-gray-600 dark:text-gray-400">Região tranquila e arborizada</span>
+                <span className="text-sm md:text-base text-gray-600 dark:text-white">Região tranquila e arborizada</span>
               </li>
               <li className="flex items-center gap-3">
                 <span className="w-2 h-2 bg-[#8B0000] rounded-full flex-shrink-0" />
-                <span className="text-sm md:text-base text-gray-600 dark:text-gray-400">Estação de trem nas proximidades</span>
+                <span className="text-sm md:text-base text-gray-600 dark:text-white">Estação de trem nas proximidades</span>
               </li>
             </ul>
           </div>
@@ -268,7 +268,7 @@ export default function Localizacao() {
               className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 dark:bg-gray-700/90 shadow-lg rounded-full p-1.5 md:p-3 active:bg-gray-100 dark:active:bg-gray-600 transition-colors"
               aria-label="Anterior"
             >
-              <svg className="w-4 h-4 md:w-6 md:h-6 text-gray-600 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 md:w-6 md:h-6 text-gray-600 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
             </button>
@@ -288,15 +288,15 @@ export default function Localizacao() {
                   key={index}
                   className="flex-shrink-0 w-32 md:w-40 bg-white dark:bg-gray-700 rounded-xl shadow-md dark:shadow-gray-900/50 p-4 md:p-6 text-center active:shadow-lg transition-shadow"
                 >
-                  <div className="text-[#8B0000] dark:text-[#ff6b6b] flex justify-center mb-2 md:mb-3">
+                  <div className="text-[#8B0000] flex justify-center mb-2 md:mb-3">
                     <div className="w-6 h-6 md:w-8 md:h-8">{item.icone}</div>
                   </div>
-                  <p className="text-xs md:text-sm text-gray-600 dark:text-gray-300 mb-2 font-medium leading-tight min-h-[32px] md:min-h-[40px] flex items-center justify-center">
+                  <p className="text-xs md:text-sm text-gray-600 dark:text-white mb-2 font-medium leading-tight min-h-[32px] md:min-h-[40px] flex items-center justify-center">
                     {item.nome}
                   </p>
                   <div className="flex items-center justify-center gap-1">
-                    <span className="text-2xl md:text-3xl font-bold text-[#8B0000] dark:text-[#ff6b6b]">{item.tempo}</span>
-                    <span className="text-xs md:text-sm text-gray-500 dark:text-gray-400">min</span>
+                    <span className="text-2xl md:text-3xl font-bold text-[#8B0000] dark:text-white">{item.tempo}</span>
+                    <span className="text-xs md:text-sm text-gray-500 dark:text-white">min</span>
                   </div>
                 </div>
               ))}
@@ -308,7 +308,7 @@ export default function Localizacao() {
               className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 dark:bg-gray-700/90 shadow-lg rounded-full p-1.5 md:p-3 active:bg-gray-100 dark:active:bg-gray-600 transition-colors"
               aria-label="Próximo"
             >
-              <svg className="w-4 h-4 md:w-6 md:h-6 text-gray-600 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 md:w-6 md:h-6 text-gray-600 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </button>

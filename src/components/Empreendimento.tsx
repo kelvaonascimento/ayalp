@@ -43,8 +43,8 @@ export default function Empreendimento() {
             <div className="grid grid-cols-2 gap-2 md:gap-3 mb-3 md:mb-4">
               {features.map((feature, index) => (
                 <div key={index} className="text-center p-3 md:p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
-                  <p className="text-lg md:text-xl font-bold text-[#8B0000] dark:text-[#ff6b6b]">{feature.number}</p>
-                  <p className="text-[10px] md:text-xs text-gray-600 dark:text-gray-400">{feature.label}</p>
+                  <p className="text-lg md:text-xl font-bold text-[#8B0000] dark:text-white">{feature.number}</p>
+                  <p className="text-[10px] md:text-xs text-gray-600 dark:text-gray-300">{feature.label}</p>
                 </div>
               ))}
             </div>

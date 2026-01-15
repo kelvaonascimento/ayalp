@@ -211,7 +211,7 @@ export default function Plantas() {
                   className="absolute left-1 md:left-2 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-gray-600/90 active:bg-white dark:active:bg-gray-500 shadow-lg rounded-full p-1.5 md:p-2 transition-colors z-10"
                   aria-label="Imagem anterior"
                 >
-                  <svg className="w-4 h-4 md:w-5 md:h-5 text-gray-600 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 md:w-5 md:h-5 text-gray-600 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                   </svg>
                 </button>
@@ -221,7 +221,7 @@ export default function Plantas() {
                   className="absolute right-1 md:right-2 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-gray-600/90 active:bg-white dark:active:bg-gray-500 shadow-lg rounded-full p-1.5 md:p-2 transition-colors z-10"
                   aria-label="Próxima imagem"
                 >
-                  <svg className="w-4 h-4 md:w-5 md:h-5 text-gray-600 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 md:w-5 md:h-5 text-gray-600 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </button>

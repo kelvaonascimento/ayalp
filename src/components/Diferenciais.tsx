@@ -47,7 +47,7 @@ export default function Diferenciais() {
               className="absolute left-2 md:left-3 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-gray-700/90 active:bg-white dark:active:bg-gray-600 shadow-lg rounded-full p-2 md:p-3 transition-colors"
               aria-label="Imagem anterior"
             >
-              <svg className="w-4 h-4 md:w-5 md:h-5 text-gray-700 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 md:w-5 md:h-5 text-gray-700 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
             </button>
@@ -57,7 +57,7 @@ export default function Diferenciais() {
               className="absolute right-2 md:right-3 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-gray-700/90 active:bg-white dark:active:bg-gray-600 shadow-lg rounded-full p-2 md:p-3 transition-colors"
               aria-label="Próxima imagem"
             >
-              <svg className="w-4 h-4 md:w-5 md:h-5 text-gray-700 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 md:w-5 md:h-5 text-gray-700 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </button>
