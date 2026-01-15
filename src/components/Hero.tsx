@@ -5,7 +5,7 @@ import { useState, useEffect, useRef } from 'react';
 
 const heroImages = [
   { src: '/images/hero.png', position: 'object-[70%_center] md:object-center' },
-  { src: '/images/hero-2.png', position: 'object-right md:object-center' },
+  { src: '/images/hero-2.png', position: 'object-[80%_80%] md:object-center' },
 ];
 
 export default function Hero() {
