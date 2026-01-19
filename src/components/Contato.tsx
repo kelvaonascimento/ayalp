@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 const perguntas = [
   {
@@ -49,6 +50,7 @@ const perguntas = [
 ];
 
 export default function Contato() {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     nome: '',
     email: '',
@@ -76,10 +78,11 @@ export default function Contato() {
   };
 
   const selecionarOpcao = (perguntaId: string, valor: string) => {
-    setRespostasOnboarding((prev) => ({
-      ...prev,
+    const novasRespostas = {
+      ...respostasOnboarding,
       [perguntaId]: valor,
-    }));
+    };
+    setRespostasOnboarding(novasRespostas);
 
     // Avança para próxima pergunta ou finaliza
     if (etapaAtual < perguntas.length - 1) {
@@ -87,61 +90,49 @@ export default function Contato() {
         setEtapaAtual((prev) => prev + 1);
       }, 300);
     } else {
-      // Última pergunta respondida, enviar dados
+      // Última pergunta respondida, enviar dados com as respostas atualizadas
       setTimeout(() => {
-        enviarFormulario();
+        enviarFormulario(novasRespostas);
       }, 300);
     }
   };
 
-  const enviarFormulario = async () => {
+  const enviarFormulario = async (respostasFinais: Record<string, string>) => {
     setIsSubmitting(true);
 
     try {
-      // =====================================================
-      // INTEGRAÇÃO RD STATION
-      // =====================================================
-      // Dados completos para enviar:
-      // - formData (nome, email, telefone)
-      // - respostasOnboarding (interesse, momento, finalidade, conheceu)
-      //
-      // const dadosCompletos = {
-      //   ...formData,
-      //   ...respostasOnboarding,
-      // };
-      //
-      // const response = await fetch('https://api.rd.services/platform/conversions', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify({
-      //     event_type: 'CONVERSION',
-      //     event_family: 'CDP',
-      //     payload: {
-      //       conversion_identifier: 'agendamento-visita-aya',
-      //       name: formData.nome,
-      //       email: formData.email,
-      //       mobile_phone: formData.telefone,
-      //       cf_interesse: respostasOnboarding.interesse,
-      //       cf_momento_compra: respostasOnboarding.momento,
-      //       cf_finalidade: respostasOnboarding.finalidade,
-      //       cf_origem: respostasOnboarding.conheceu,
-      //     },
-      //   }),
-      // });
-      // =====================================================
+      // Integração RD Station
+      const response = await fetch(`https://api.rd.services/platform/conversions?api_key=${process.env.NEXT_PUBLIC_RD_STATION_API_KEY}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          event_type: 'CONVERSION',
+          event_family: 'CDP',
+          payload: {
+            conversion_identifier: 'ayahomeresort',
+            name: formData.nome,
+            email: formData.email,
+            mobile_phone: formData.telefone,
+            cf_cf_tipo_unidade_interesse: respostasFinais.interesse,
+            cf_cf_momento_compra: respostasFinais.momento,
+            cf_cf_finalidade_imovel: respostasFinais.finalidade,
+            cf_cf_como_conheceu: respostasFinais.conheceu,
+            cf_cf_produto: 'AYA Home Resort',
+            traffic_source: 'organic',
+            tags: ['ayahomeresort', 'site-lp'],
+          },
+        }),
+      });
 
-      // Simulação de envio
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      if (!response.ok) {
+        throw new Error('Erro ao enviar para RD Station');
+      }
 
       setSubmitStatus('success');
       setShowOnboarding(false);
-      setFormData({
-        nome: '',
-        email: '',
-        telefone: '',
-        aceitePrivacidade: false,
-      });
-      setRespostasOnboarding({});
+
+      // Redireciona para a página de obrigado
+      router.push('/obrigado');
     } catch {
       setSubmitStatus('error');
     } finally {
