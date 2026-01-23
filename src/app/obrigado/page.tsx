@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Obrigado() {
-  const whatsappLink = "https://api.whatsapp.com/send/?phone=5511999999999&text=Ol%C3%A1%21+Vim+pelo+site+do+AYA+Home+Resort+e+gostaria+de+mais+informa%C3%A7%C3%B5es.&type=phone_number&app_absent=0";
+  const whatsappLink = "https://api.whatsapp.com/send/?phone=5511993869970&text=Ol%C3%A1%2C+vim+do+AYA+Home+Resort+e+gostaria+de+mais+informa%C3%A7%C3%B5es+sobre+os+empreendimentos%21&type=phone_number&app_absent=0";
 
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 flex items-center justify-center p-4">
