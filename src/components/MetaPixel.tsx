@@ -22,8 +22,11 @@ export default function MetaPixel() {
       fbq('track', 'PageView');
     }
     // Conversão: chegada na página de obrigado
-    if (pathname === '/obrigado' && leadEnviado.current !== pathname) {
+    // trava global: neste site o componente pode montar duas vezes; 1 Lead por chegada
+    const w = window as unknown as { __leadAt?: number };
+    if (pathname === '/obrigado' && leadEnviado.current !== pathname && !(w.__leadAt && Date.now() - w.__leadAt < 10000)) {
       leadEnviado.current = pathname;
+      w.__leadAt = Date.now();
       fbq('track', 'Lead', { content_name: 'AYA Home Resort - cadastro do site' });
     }
     if (pathname !== '/obrigado') leadEnviado.current = null;
