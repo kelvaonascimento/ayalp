@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import ThemeProvider from "@/components/ThemeProvider";
+import MetaPixel from "@/components/MetaPixel";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -124,6 +125,8 @@ fbq('track', 'PageView');`,
         <meta name="theme-color" content="#8B0000" />
       </head>
       <body className={`${poppins.className} antialiased bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300`}>
+        {/* Meta Pixel: PageView nas navegações, Lead em /obrigado, Contact no WhatsApp */}
+        <MetaPixel />
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
